@@ -1,6 +1,6 @@
 FROM hayd/alpine-deno:latest
 
-EXPOSE 3000
+EXPOSE 8001
 
 WORKDIR /usr/app
 

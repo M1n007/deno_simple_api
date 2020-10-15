@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=deno_test
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data:/data/db
+  api:
+    build: .
+    restart: always
+    container_name: deno-api
+    depends_on:
+      - mongodb
+    volumes:
+      - ./:/usr/app
+    ports:
+      - 3000:3000
+
+volumes:
+  mongo-data:

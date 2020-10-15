@@ -1,3 +1,5 @@
 .env
 .deno_plugins
 .vscode
+.idea
+mongo-data
